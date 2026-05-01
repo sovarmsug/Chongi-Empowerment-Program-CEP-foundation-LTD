@@ -1,0 +1,28 @@
+{
+  "name": "chongi-global-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "CHONGI Global - Transforming Lives in Uganda",
+  "type": "module",
+  "scripts": {
+    "serve": "python -m http.server 8080",
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "echo 'Ready for deployment'"
+  },
+  "keywords": [
+    "nonprofit",
+    "uganda",
+    "community",
+    "education",
+    "healthcare",
+    "charity",
+    "static-website"
+  ],
+  "author": "CHONGI Global",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

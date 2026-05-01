@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="theme-color" content="#16a34a">
+    <meta name="supported-color-schemes" content="light">
+    <title>Projects & Impact - Chongi Empowerment Program (CEP)</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Additional CSS for Projects Page -->
+    <style>
+        .projects-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%);
+            color: white;
+            padding: 140px 0 80px 0;
+        }
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        .project-content {
+            padding: 2rem;
+        }
+        .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item h3 {
+            color: #16a34a;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #16a34a;
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <!-- Redesigned Header -->
+    <header class="main-header">
+      <div class="header-top">
+        <div class="container-fluid px-md-5">
+          <div class="header-content">
+            <!-- Logo -->
+            <div class="header-logo">
+              <a href="index.html" class="navbar-brand">
+                <img src="img/CHONGI_GLOBAL_LOGO.png" alt="Chongi Empowerment Program (CEP)" height="80px" style="border-radius: 12px;">
+              </a>
+            </div>
+
+            <!-- Centered Search Bar -->
+            <div class="header-search">
+              <form class="search-form" onsubmit="siteSearch(event)">
+                <div class="search-input-group">
+                  <input type="search" id="searchInput" class="search-input" placeholder="Search our website..." aria-label="Search">
+                  <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="header-actions">
+              <a href="tel:+256705499999" class="header-action-btn">
+                <i class="fas fa-phone"></i>
+                <span>0705499999</span>
+              </a>
+              <a href="#donate" class="header-action-btn donate-btn">
+                <i class="fas fa-heart"></i>
+                <span>Donate</span>
+              </a>
+              <button class="header-action-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="main-nav">
+        <div class="container-fluid px-md-5">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#about" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="programs.html" class="nav-link">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link active">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a href="get-involved.html" class="nav-link">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#donate" class="nav-link">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img src="img/CHONGI_GLOBAL_LOGO.png" alt="Chongi Empowerment Program (CEP)" height="60px" style="border-radius: 10px;">
+          <h4>Chongi Empowerment Program</h4>
+        </div>
+        <button class="sidebar-close" id="sidebarClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="sidebar-content">
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-item">
+            <a href="index.html" class="sidebar-nav-link">
+              <i class="fas fa-home me-3"></i>Home
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#about" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>About Us
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="programs.html" class="sidebar-nav-link">
+              <i class="fas fa-graduation-cap me-3"></i>Programs
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="projects.html" class="sidebar-nav-link active">
+              <i class="fas fa-project-diagram me-3"></i>Projects
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="gallery.html" class="sidebar-nav-link">
+              <i class="fas fa-images me-3"></i>Gallery
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="get-involved.html" class="sidebar-nav-link">
+              <i class="fas fa-hands-helping me-3"></i>Get Involved
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#donate" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>Donate
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#contact" class="sidebar-nav-link">
+              <i class="fas fa-envelope me-3"></i>Contact
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-contact">
+          <h5>Get in Touch</h5>
+          <div class="contact-info">
+            <p><i class="fas fa-phone me-2"></i><a href="tel:+256705499999">+256705499999</a></p>
+            <p><i class="fas fa-envelope me-2"></i><a href="mailto:masigae2000@gmail.com">masigae2000@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt me-2"></i>Kampala, Uganda</p>
+          </div>
+        </div>
+
+        <div class="sidebar-social">
+          <h5>Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.youtube.com/@sovereignarms8357" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://x.com/BaboonMaddox/status/1936350715477413950" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/?hl=en" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/masiga-e-okuku-377a55297/?originalSubdomain=ug" class="social-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Floating Menu Button -->
+    <button class="floating-menu-btn" id="floatingMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Projects Hero -->
+    <section class="projects-hero">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Projects & Impact</h1>
+            <p class="lead mb-4">Transforming Communities Through Action</p>
+            <p class="lead">Showcasing our ongoing projects and the real impact we're making in Uganda</p>
+        </div>
+    </section>
+
+    <!-- Overall Impact Stats -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Our <span class="text-success">Impact</span></h2>
+                    <p class="lead">Numbers that show our commitment to community transformation</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card text-center">
+                        <h3 class="text-success">500+</h3>
+                        <p>Youth Trained</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card text-center">
+                        <h3 class="text-primary">50+</h3>
+                        <p>Active Volunteers</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card text-center">
+                        <h3 class="text-info">25+</h3>
+                        <p>Ongoing Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card text-center">
+                        <h3 class="text-warning">10+</h3>
+                        <p>Communities Reached</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Featured <span class="text-primary">Projects</span></h2>
+                    <p class="lead">Highlighting our most impactful community initiatives</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Digital Literacy Campaign -->
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Ugandan Digital Literacy Campaign" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-success">Digital Literacy Campaign</h3>
+                            <p class="lead">Bridging the Digital Divide</p>
+                            <p>A comprehensive initiative to bring digital literacy to underserved communities in Kampala. This project provides free computer training, internet access, and digital skills development to youth and adults.</p>
+                            
+                            <div class="impact-stats">
+                                <div class="stat-item">
+                                    <h3>200+</h3>
+                                    <p>Participants</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>5</h3>
+                                    <p>Centers</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>85%</h3>
+                                    <p>Success Rate</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="badge bg-success me-2">ICT Training</span>
+                                <span class="badge bg-primary me-2">Education</span>
+                                <span class="badge bg-info">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Youth Leadership Academy -->
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1181522/pexels-photo-1181522.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Ugandan Youth Leadership Academy" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-primary">Youth Leadership Academy</h3>
+                            <p class="lead">Creating Tomorrow's Leaders</p>
+                            <p>An intensive leadership development program that identifies and nurtures young talent through mentorship, workshops, and practical leadership experiences. Participants develop essential skills for community leadership.</p>
+                            
+                            <div class="impact-stats">
+                                <div class="stat-item">
+                                    <h3>150</h3>
+                                    <p>Graduates</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>12</h3>
+                                    <p>Weeks</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>90%</h3>
+                                    <p>Employment Rate</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="badge bg-primary me-2">Youth Empowerment</span>
+                                <span class="badge bg-success me-2">Leadership</span>
+                                <span class="badge bg-info">Annual</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Support Initiative -->
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Ugandan Education Support Initiative" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-info">Education Support Initiative</h3>
+                            <p class="lead">Every Child Deserves Education</p>
+                            <p>Providing comprehensive educational support including school fees, learning materials, tutoring services, and mentorship to underprivileged children, ensuring they have equal opportunities to succeed academically.</p>
+                            
+                            <div class="impact-stats">
+                                <div class="stat-item">
+                                    <h3>300</h3>
+                                    <p>Students</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>15</h3>
+                                    <p>Schools</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>95%</h3>
+                                    <p>Pass Rate</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="badge bg-info me-2">Education</span>
+                                <span class="badge bg-success me-2">Scholarship</span>
+                                <span class="badge bg-warning">Continuous</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Development Workshop -->
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/1181525/pexels-photo-1181525.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Ugandan Skills Development Workshop" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-warning">Skills Development Workshop</h3>
+                            <p class="lead">Building Sustainable Livelihoods</p>
+                            <p>Practical vocational training programs that equip participants with marketable skills including tailoring, carpentry, electronics repair, and small business management, leading to economic independence.</p>
+                            
+                            <div class="impact-stats">
+                                <div class="stat-item">
+                                    <h3>180</h3>
+                                    <p>Trainees</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>8</h3>
+                                    <p>Skills Areas</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>75%</h3>
+                                    <p>Start Businesses</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="badge bg-warning me-2">Vocational Training</span>
+                                <span class="badge bg-success me-2">Livelihood</span>
+                                <span class="badge bg-primary">Quarterly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Success <span class="text-success">Stories</span></h2>
+                    <p class="lead">Real lives transformed through our programs</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-text">
+                            "The ICT training program changed my life completely. I went from having no computer skills to becoming a web developer. Now I'm employed and supporting my family."
+                        </div>
+                        <div class="testimonial-author">
+                            - Sarah Nakato, ICT Graduate
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-text">
+                            "The Youth Leadership Academy gave me the confidence and skills to start my own community initiative. I'm now mentoring other young people in my area."
+                        </div>
+                        <div class="testimonial-author">
+                            - David Mugabe, Youth Leader
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-text">
+                            "Without CEP's education support, I would have dropped out of school. Today I'm completing my university education thanks to their continued support."
+                        </div>
+                        <div class="testimonial-author">
+                            - Grace Achieng, University Student
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Be Part of Our Impact Story</h2>
+            <p class="lead mb-4">Join us in transforming communities and changing lives</p>
+            <div class="cta-buttons">
+                <a href="get-involved.html" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-hands-helping me-2"></i>Get Involved
+                </a>
+                <a href="index.html#donate" class="btn btn-success btn-lg">
+                    <i class="fas fa-heart me-2"></i>Support Our Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2026 CEP foundation LTD. All rights reserved.</p>
+            <p class="small">Building Skills. Creating Opportunities. Transforming Communities.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    
+    <!-- Sidebar functionality for projects page -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize sidebar for projects page
+        const menuToggle = document.getElementById('menuToggle');
+        const floatingMenuBtn = document.getElementById('floatingMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarClose = document.getElementById('sidebarClose');
+
+        // Open sidebar from main menu toggle
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Open sidebar from floating menu button
+        if (floatingMenuBtn) {
+            floatingMenuBtn.addEventListener('click', function() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        // Close sidebar
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Close sidebar when clicking close button
+        sidebarClose.addEventListener('click', closeSidebar);
+
+        // Close sidebar on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    });
+    </script>
+</body>
+</html>

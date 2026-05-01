@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="theme-color" content="#16a34a">
+    <meta name="supported-color-schemes" content="light">
+    <title>Get Involved - Chongi Empowerment Program (CEP)</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Additional CSS for Get Involved Page -->
+    <style>
+        .get-involved-hero {
+            background: linear-gradient(135deg, #16a34a 0%, #0891b2 100%);
+            color: white;
+            padding: 140px 0 80px 0;
+        }
+        .involvement-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .involvement-card:hover {
+            transform: translateY(-5px);
+        }
+        .involvement-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #16a34a, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        .volunteer-form {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .partnership-card {
+            background: linear-gradient(135deg, #2563eb, #16a34a);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .benefit-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+        .benefit-item i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <!-- Redesigned Header -->
+    <header class="main-header">
+      <div class="header-top">
+        <div class="container-fluid px-md-5">
+          <div class="header-content">
+            <!-- Logo -->
+            <div class="header-logo">
+              <a href="index.html" class="navbar-brand">
+                <img src="img/CHONGI_GLOBAL_LOGO.png" alt="Chongi Empowerment Program (CEP)" height="80px" style="border-radius: 12px;">
+              </a>
+            </div>
+
+            <!-- Centered Search Bar -->
+            <div class="header-search">
+              <form class="search-form" onsubmit="siteSearch(event)">
+                <div class="search-input-group">
+                  <input type="search" id="searchInput" class="search-input" placeholder="Search our website..." aria-label="Search">
+                  <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="header-actions">
+              <a href="tel:+256705499999" class="header-action-btn">
+                <i class="fas fa-phone"></i>
+                <span>0705499999</span>
+              </a>
+              <a href="#donate" class="header-action-btn donate-btn">
+                <i class="fas fa-heart"></i>
+                <span>Donate</span>
+              </a>
+              <button class="header-action-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="main-nav">
+        <div class="container-fluid px-md-5">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#about" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="programs.html" class="nav-link">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a href="get-involved.html" class="nav-link active">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#donate" class="nav-link">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img src="img/CHONGI_GLOBAL_LOGO.png" alt="Chongi Empowerment Program (CEP)" height="60px" style="border-radius: 10px;">
+          <h4>Chongi Empowerment Program</h4>
+        </div>
+        <button class="sidebar-close" id="sidebarClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="sidebar-content">
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-item">
+            <a href="index.html" class="sidebar-nav-link">
+              <i class="fas fa-home me-3"></i>Home
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#about" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>About Us
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="programs.html" class="sidebar-nav-link">
+              <i class="fas fa-graduation-cap me-3"></i>Programs
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="projects.html" class="sidebar-nav-link">
+              <i class="fas fa-project-diagram me-3"></i>Projects
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="gallery.html" class="sidebar-nav-link">
+              <i class="fas fa-images me-3"></i>Gallery
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="get-involved.html" class="sidebar-nav-link active">
+              <i class="fas fa-hands-helping me-3"></i>Get Involved
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#donate" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>Donate
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#contact" class="sidebar-nav-link">
+              <i class="fas fa-envelope me-3"></i>Contact
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-contact">
+          <h5>Get in Touch</h5>
+          <div class="contact-info">
+            <p><i class="fas fa-phone me-2"></i><a href="tel:+256705499999">+256705499999</a></p>
+            <p><i class="fas fa-envelope me-2"></i><a href="mailto:masigae2000@gmail.com">masigae2000@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt me-2"></i>Kampala, Uganda</p>
+          </div>
+        </div>
+
+        <div class="sidebar-social">
+          <h5>Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.youtube.com/@sovereignarms8357" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://x.com/BaboonMaddox/status/1936350715477413950" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/?hl=en" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/masiga-e-okuku-377a55297/?originalSubdomain=ug" class="social-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Floating Menu Button -->
+    <button class="floating-menu-btn" id="floatingMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Get Involved Hero -->
+    <section class="get-involved-hero">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Get Involved</h1>
+            <p class="lead mb-4">Building Skills. Creating Opportunities. Transforming Communities.</p>
+            <p class="lead">Join us in making a difference in the lives of youth and communities in Uganda</p>
+        </div>
+    </section>
+
+    <!-- Ways to Get Involved -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Ways to <span class="text-success">Get Involved</span></h2>
+                    <p class="lead">Choose how you want to make an impact</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Volunteer -->
+                <div class="col-lg-4 mb-4">
+                    <div class="involvement-card" data-aos="fade-up">
+                        <div class="involvement-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="text-center mb-4 text-success">Volunteer</h3>
+                        <p class="lead text-center mb-4">Share Your Time & Skills</p>
+                        <p>Join our team of dedicated volunteers and make a direct impact in our community. Whether you have a few hours or want to commit long-term, we have opportunities for you.</p>
+                        
+                        <h5 class="mt-4 mb-3">Volunteer Areas:</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>ICT Training Assistant</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Youth Mentor</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Education Tutor</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Event Support</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Administrative Help</li>
+                        </ul>
+                        
+                        <div class="text-center mt-4">
+                            <a href="#volunteer-form" class="btn btn-success">
+                                <i class="fas fa-user-plus me-2"></i>Apply to Volunteer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner -->
+                <div class="col-lg-4 mb-4">
+                    <div class="involvement-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="involvement-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="text-center mb-4 text-primary">Partner With Us</h3>
+                        <p class="lead text-center mb-4">Create Lasting Change Together</p>
+                        <p>Partner with CEP to amplify your impact. We welcome collaborations with organizations, businesses, and institutions that share our vision of empowered communities.</p>
+                        
+                        <h5 class="mt-4 mb-3">Partnership Types:</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-primary me-2"></i>Corporate Partnerships</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>NGO Collaborations</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Academic Partnerships</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Community Alliances</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Funding Partners</li>
+                        </ul>
+                        
+                        <div class="text-center mt-4">
+                            <a href="#partnership-form" class="btn btn-primary">
+                                <i class="fas fa-handshake me-2"></i>Explore Partnership
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donate -->
+                <div class="col-lg-4 mb-4">
+                    <div class="involvement-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="involvement-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-center mb-4 text-danger">Donate</h3>
+                        <p class="lead text-center mb-4">Fuel Our Mission</p>
+                        <p>Your generous donation helps us continue providing quality programs to youth and communities. Every contribution makes a difference in someone's life.</p>
+                        
+                        <h5 class="mt-4 mb-3">Donation Impact:</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-danger me-2"></i>Education Materials</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>ICT Equipment</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Training Programs</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Community Outreach</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Operational Costs</li>
+                        </ul>
+                        
+                        <div class="text-center mt-4">
+                            <a href="index.html#donate" class="btn btn-danger">
+                                <i class="fas fa-heart me-2"></i>Make a Donation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Registration Form -->
+    <section id="volunteer-form" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="volunteer-form">
+                        <h2 class="text-center mb-4 text-success">Volunteer Registration</h2>
+                        <p class="text-center mb-5">Join our team and make a difference in your community</p>
+                        
+                        <form name="volunteer" method="POST" netlify action="/thank-you.html">
+                            <input type="hidden" name="form-name" value="volunteer">
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" name="address">
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="age" class="form-label">Age</label>
+                                    <input type="number" class="form-control" id="age" name="age" min="16" max="100">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="occupation" class="form-label">Occupation</label>
+                                    <input type="text" class="form-control" id="occupation" name="occupation">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="interests" class="form-label">Areas of Interest *</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="ict" id="ict">
+                                    <label class="form-check-label" for="ict">ICT Training</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="youth" id="youth">
+                                    <label class="form-check-label" for="youth">Youth Empowerment</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="education" id="education">
+                                    <label class="form-check-label" for="education">Education Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="livelihood" id="livelihood">
+                                    <label class="form-check-label" for="livelihood">Livelihood Development</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="events" id="events">
+                                    <label class="form-check-label" for="events">Event Support</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="admin" id="admin">
+                                    <label class="form-check-label" for="admin">Administrative</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="skills" class="form-label">Skills & Experience</label>
+                                <textarea class="form-control" id="skills" name="skills" rows="3" placeholder="Tell us about your relevant skills and experience"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="motivation" class="form-label">Why do you want to volunteer with CEP? *</label>
+                                <textarea class="form-control" id="motivation" name="motivation" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="availability" class="form-label">Availability</label>
+                                <select class="form-control" id="availability" name="availability">
+                                    <option value="">Select availability</option>
+                                    <option value="weekdays">Weekdays</option>
+                                    <option value="weekends">Weekends</option>
+                                    <option value="both">Both</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="hours" class="form-label">Hours per week</label>
+                                <select class="form-control" id="hours" name="hours">
+                                    <option value="">Select hours</option>
+                                    <option value="1-5">1-5 hours</option>
+                                    <option value="6-10">6-10 hours</option>
+                                    <option value="11-15">11-15 hours</option>
+                                    <option value="16+">16+ hours</option>
+                                </select>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="fas fa-user-plus me-2"></i>Submit Application
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Opportunities -->
+    <section id="partnership-form" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Partnership <span class="text-primary">Opportunities</span></h2>
+                    <p class="lead">Create lasting impact through strategic partnerships</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Corporate Partnership -->
+                <div class="col-lg-6 mb-4">
+                    <div class="partnership-card" data-aos="fade-up">
+                        <h3 class="mb-4">Corporate Partnership</h3>
+                        <p class="lead mb-4">Align your brand with social impact</p>
+                        <p>Partner with us to enhance your corporate social responsibility while making a tangible difference in communities. We offer various partnership levels tailored to your organization's goals.</p>
+                        
+                        <h5 class="mt-4 mb-3">Partnership Benefits:</h5>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Brand visibility and recognition
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Employee engagement opportunities
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Tax-deductible contributions
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Impact reports and metrics
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Media coverage opportunities
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <a href="mailto:masigae2000@gmail.com?subject=Corporate Partnership Inquiry" class="btn btn-light">
+                                <i class="fas fa-handshake me-2"></i>Inquire About Partnership
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO/Institutional Partnership -->
+                <div class="col-lg-6 mb-4">
+                    <div class="partnership-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="mb-4">NGO & Institutional Partnership</h3>
+                        <p class="lead mb-4">Amplify impact through collaboration</p>
+                        <p>We welcome partnerships with NGOs, educational institutions, and community organizations to share resources, expertise, and networks for greater collective impact.</p>
+                        
+                        <h5 class="mt-4 mb-3">Collaboration Areas:</h5>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Program implementation
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Resource sharing
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Joint fundraising
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Research and evaluation
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i> Advocacy campaigns
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <a href="mailto:masigae2000@gmail.com?subject=NGO Partnership Inquiry" class="btn btn-light">
+                                <i class="fas fa-handshake me-2"></i>Explore Collaboration
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-success text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Make a Difference?</h2>
+            <p class="lead mb-4">Every contribution counts in transforming lives and communities</p>
+            <div class="cta-buttons">
+                <a href="index.html#donate" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-heart me-2"></i>Donate Now
+                </a>
+                <a href="index.html#contact" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2026 CEP foundation LTD. All rights reserved.</p>
+            <p class="small">Building Skills. Creating Opportunities. Transforming Communities.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    
+    <!-- Sidebar functionality for get involved page -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize sidebar for get involved page
+        const menuToggle = document.getElementById('menuToggle');
+        const floatingMenuBtn = document.getElementById('floatingMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarClose = document.getElementById('sidebarClose');
+
+        // Open sidebar from main menu toggle
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Open sidebar from floating menu button
+        if (floatingMenuBtn) {
+            floatingMenuBtn.addEventListener('click', function() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        // Close sidebar
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Close sidebar when clicking close button
+        sidebarClose.addEventListener('click', closeSidebar);
+
+        // Close sidebar on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="supported-color-schemes" content="light">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Chongi Empowerment Program (CEP) - Empowering youth and communities in Uganda through ICT training, education support, and livelihood development programs. Building Skills. Creating Opportunities. Transforming Communities.">
+    <meta name="keywords" content="Chongi Empowerment Program, CEP, Uganda, youth empowerment, ICT training, education support, livelihood development, Kampala, NGO, community development">
+    <meta name="author" content="Chongi Empowerment Program (CEP)">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Chongi Empowerment Program - Building Skills, Creating Opportunities">
+    <meta property="og:description" content="Empowering youth and communities in Uganda through ICT training, education support, and livelihood development. Building Skills. Creating Opportunities. Transforming Communities.">
+    <meta property="og:image" content="https://your-domain.com/img/CHONGI_GLOBAL_LOGO.png">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CHONGI Global - Transforming Lives in Uganda">
+    <meta name="twitter:description" content="Empowering Ugandan communities through education, healthcare, and sustainable development.">
+
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- aos cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- link css -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Chongi Empowerment Program (CEP) - Building Skills, Creating Opportunities</title>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NonProfitOrganization",
+      "name": "Chongi Empowerment Program (CEP)",
+      "url": "https://your-domain.com",
+      "logo": "https://your-domain.com/img/CHONGI_GLOBAL_LOGO.png",
+      "description": "Empowering youth and communities in Uganda through ICT training, education support, and livelihood development programs. Building Skills. Creating Opportunities. Transforming Communities.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nansana",
+        "addressLocality": "Kampala",
+        "addressCountry": "Uganda"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+256705499999",
+        "contactType": "customer service",
+        "email": "masigae2000@gmail.com"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@sovereignarms8357",
+        "https://x.com/BaboonMaddox/status/1936350715477413950",
+        "https://www.instagram.com/?hl=en",
+        "https://www.linkedin.com/in/masiga-e-okuku-377a55297/?originalSubdomain=ug"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Uganda"
+      },
+      "knowsAbout": [
+        "Education",
+        "Healthcare",
+        "Community Development",
+        "Shelter",
+        "Youth Empowerment"
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <!-- Redesigned Header -->
+    <header class="main-header">
+      <div class="header-top">
+        <div class="container-fluid px-md-5">
+          <div class="header-content">
+            <!-- Logo -->
+            <div class="header-logo">
+              <a href="#home" class="navbar-brand">
+                <img src="img/CHONGI_GLOBAL_LOGO.png" alt="Chongi Empowerment Program (CEP)" height="80px" style="border-radius: 12px;">
+              </a>
+            </div>
+
+            <!-- Centered Search Bar -->
+            <div class="header-search">
+              <form class="search-form" onsubmit="siteSearch(event)">
+                <div class="search-input-group">
+                  <input type="search" id="searchInput" class="search-input" placeholder="Search our website..." aria-label="Search">
+                  <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+              <a href="tel:+256705499999" class="header-action-btn d-none d-md-inline-flex">
+                <i class="fas fa-phone"></i>
+              </a>
+              <a href="#donate" class="header-action-btn donate-btn">
+                <i class="fas fa-heart"></i>
+                <span class="d-none d-md-inline">Donate</span>
+              </a>
+              <button class="menu-toggle-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="main-nav">
+        <div class="container-fluid px-md-5">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#home" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="programs.html" class="nav-link">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a href="get-involved.html" class="nav-link">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a href="#donate" class="nav-link">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img src="img/CHONGI_GLOBAL_LOGO.png" alt="CHONGI Global" height="60px" style="border-radius: 10px;">
+          <h4>CHONGI Global</h4>
+        </div>
+        <button class="sidebar-close" id="sidebarClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="sidebar-content">
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-item">
+            <a href="#home" class="sidebar-nav-link">
+              <i class="fas fa-home me-3"></i>Home
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#about" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>About Us
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="programs.html" class="sidebar-nav-link">
+              <i class="fas fa-graduation-cap me-3"></i>Programs
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="projects.html" class="sidebar-nav-link">
+              <i class="fas fa-project-diagram me-3"></i>Projects
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="gallery.html" class="sidebar-nav-link">
+              <i class="fas fa-images me-3"></i>Gallery
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="get-involved.html" class="sidebar-nav-link">
+              <i class="fas fa-hands-helping me-3"></i>Get Involved
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#donate" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>Donate
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="#contact" class="sidebar-nav-link">
+              <i class="fas fa-envelope me-3"></i>Contact
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-contact">
+          <h5>Get in Touch</h5>
+          <div class="contact-info">
+            <p><i class="fas fa-phone me-2"></i><a href="tel:+256705499999">+256705499999</a></p>
+            <p><i class="fas fa-envelope me-2"></i><a href="mailto:masigae2000@gmail.com">masigae2000@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt me-2"></i>Nansana, Kampala, Uganda</p>
+          </div>
+        </div>
+
+        <div class="sidebar-social">
+          <h5>Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.youtube.com/@sovereignarms8357" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://x.com/BaboonMaddox/status/1936350715477413950" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/?hl=en" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/masiga-e-okuku-377a55297/?originalSubdomain=ug" class="social-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Floating Menu Button -->
+    <button class="floating-menu-btn" id="floatingMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Search Function -->
+    <script>
+    function siteSearch(e) {
+      e.preventDefault();
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (!query.trim()) return;
+      
+      const sections = document.querySelectorAll('section');
+      let found = false;
+      
+      sections.forEach(section => {
+        const text = section.textContent.toLowerCase();
+        if (text.includes(query)) {
+          section.scrollIntoView({behavior: 'smooth'});
+          found = true;
+          return;
+        }
+      });
+      
+      if (!found) {
+        alert("No results found on this page for: " + query);
+      }
+      
+      // Clear search input
+      document.getElementById('searchInput').value = '';
+    }
+    </script>
+
+    <!-- Photo Slideshow Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slideshow = document.getElementById('heroSlideshow');
+      const slides = slideshow.querySelectorAll('.slide');
+      let currentSlide = 0;
+      let isTransitioning = false;
+      
+      function showSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        // Remove active class from all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Add active class to current slide
+        slides[index].classList.add('active');
+        
+        // Reset transition flag after animation
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 1000);
+        
+        // Update current slide index
+        currentSlide = index;
+      }
+      
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+      
+      function startSlideshow() {
+        // Change slide every 4 seconds
+        setInterval(nextSlide, 4000);
+      }
+      
+      // Preload images for smooth transitions
+      function preloadImages() {
+        slides.forEach(slide => {
+          const img = new Image();
+          img.src = slide.src;
+        });
+      }
+      
+      // Initialize slideshow
+      if (slides.length > 0) {
+        preloadImages();
+        showSlide(0);
+        startSlideshow();
+        
+        // Optimize for mobile
+        if (window.innerWidth <= 768) {
+          slideshow.style.filter = 'brightness(0.8) contrast(1.1)';
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth <= 768) {
+            slideshow.style.filter = 'brightness(0.8) contrast(1.1)';
+          } else {
+            slideshow.style.filter = 'none';
+          }
+        });
+      }
+    });
+    </script>
+
+    <!-- Button Functionality Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add click handlers to all buttons
+      const buttons = document.querySelectorAll('.btn, .service-link, .program-link, .project-link');
+      
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          // Add ripple effect
+          createRipple(e, this);
+          
+          // Add loading state for form submissions
+          if (this.type === 'submit') {
+            this.classList.add('loading');
+            setTimeout(() => {
+              this.classList.remove('loading');
+            }, 2000);
+          }
+        });
+      });
+      
+      // Animated Counter for Impact Statistics
+      const counters = document.querySelectorAll('.stat-number');
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            
+            // Start counting animation
+            let current = 0;
+            const increment = target / 100; // Count up by 1% each step
+            
+            const timer = setInterval(() => {
+              current += increment;
+              counter.textContent = Math.floor(current);
+              
+              if (current >= target) {
+                clearInterval(timer);
+                counter.textContent = target.toLocaleString();
+              }
+            }, 20);
+            
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      counters.forEach(counter => {
+        observer.observe(counter);
+      });
+    });
+    </script>
+
+    <!-- Handle all navigation links (internal and external) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const allLinks = document.querySelectorAll('a[href]');
+      allLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          
+          // Handle internal page links
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+              const offset = 140; // Header height
+              const targetPosition = targetElement.offsetTop - offset;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+              
+              // Update active state for internal links
+              updateActiveState(this);
+            }
+          }
+          // Handle external page links
+          else if (href.includes('.html')) {
+            // Add loading state for page navigation
+            this.classList.add('loading');
+            
+            // Show loading notification
+            showNotification('Loading page...', 'info');
+            
+            // Navigate after short delay for visual feedback
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          }
+          // Handle external URLs
+          else if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+            // Open external links in new tab
+            if (href.startsWith('http') && !href.includes(window.location.hostname)) {
+              e.preventDefault();
+              window.open(href, '_blank', 'noopener,noreferrer');
+            }
+          }
+        });
+      });
+      
+      // Update active state function
+      function updateActiveState(clickedLink) {
+        // Remove active class from all navigation links
+        document.querySelectorAll('.nav-link, .sidebar-nav-link').forEach(link => {
+          link.classList.remove('active');
+        });
+        
+        // Add active class to clicked link and corresponding links
+        const linkText = clickedLink.textContent.trim();
+        document.querySelectorAll('.nav-link, .sidebar-nav-link').forEach(link => {
+          if (link.textContent.trim() === linkText) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      // Set initial active state based on current page
+      function setInitialActiveState() {
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        
+        document.querySelectorAll('.nav-link, .sidebar-nav-link').forEach(link => {
+          const href = link.getAttribute('href');
+          link.classList.remove('active');
+          
+          // Set active based on current page
+          if ((currentPage === 'index.html' && href === '#home') ||
+              (currentPage === 'programs.html' && href === 'programs.html') ||
+              (currentPage === 'projects.html' && href === 'projects.html') ||
+              (currentPage === 'gallery.html' && href === 'gallery.html') ||
+              (currentPage === 'get-involved.html' && href === 'get-involved.html')) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      // Initialize active state
+      setInitialActiveState();
+      
+      // Update active state on scroll for internal links
+      function updateActiveOnScroll() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 200;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-link, .sidebar-nav-link').forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + sectionId) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+      
+      // Fix scroll behavior to prevent overlap
+      function fixScrollBehavior() {
+        const sections = document.querySelectorAll('section');
+        
+        sections.forEach(section => {
+          // Add proper margin between sections
+          const nextSection = section.nextElementSibling;
+          if (nextSection && nextSection.tagName === 'SECTION') {
+            section.style.marginBottom = '0';
+            nextSection.style.marginTop = '0';
+          }
+        });
+      }
+      
+      // Add scroll listener for active state updates
+      window.addEventListener('scroll', updateActiveOnScroll);
+      
+      // Fix scroll behavior on load
+      fixScrollBehavior();
+      
+      // Prevent content overlap during scroll
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        document.body.classList.add('scrolling');
+        
+        scrollTimeout = setTimeout(function() {
+          document.body.classList.remove('scrolling');
+        }, 150);
+      });
+      
+      // Handle external links
+      const externalLinks = document.querySelectorAll('a[href^="http"], a[href^="mailto:"]');
+      externalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Add confirmation for external links
+          if (this.href.includes('mailto:')) {
+            // Email link - open in default mail client
+            return true;
+          } else if (!this.href.includes(window.location.hostname)) {
+            // External link - open in new tab
+            this.setAttribute('target', '_blank');
+            this.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+      });
+      
+      // Handle form submissions
+      const forms = document.querySelectorAll('form');
+      forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const submitButton = this.querySelector('button[type="submit"], input[type="submit"]');
+          if (submitButton) {
+            submitButton.classList.add('loading');
+            
+            // Simulate form submission
+            setTimeout(() => {
+              submitButton.classList.remove('loading');
+              
+              // Show success message
+              showNotification('Form submitted successfully!', 'success');
+              
+              // Reset form if it's not a contact form
+              if (!this.action.includes('contact')) {
+                this.reset();
+              }
+            }, 2000);
+          }
+        });
+      });
+      
+      // Notification system
+      function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+          notification.classList.add('show');
+        }, 100);
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+          notification.classList.remove('show');
+          setTimeout(() => {
+            notification.remove();
+          }, 300);
+        }, 3000);
+      }
+      
+      // Add hover sound effects (optional)
+      const hoverableButtons = document.querySelectorAll('.btn:not(:disabled)');
+      hoverableButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+          // Add visual feedback
+          this.style.transform = 'translateY(-2px) scale(1.02)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+          this.style.transform = '';
+        });
+      });
+      
+      // Handle button focus states
+      const focusableButtons = document.querySelectorAll('.btn, .service-link, .program-link, .project-link');
+      focusableButtons.forEach(button => {
+        button.addEventListener('focus', function() {
+          this.setAttribute('aria-pressed', 'false');
+        });
+        
+        button.addEventListener('blur', function() {
+          this.removeAttribute('aria-pressed');
+        });
+      });
+      
+      // Add smooth scroll behavior for all internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Handle mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+          this.classList.toggle('active');
+        });
+      }
+      
+      // Add button click feedback
+      document.addEventListener('click', function(e) {
+        if (e.target.matches('.btn, .service-link, .program-link, .project-link')) {
+          // Add visual feedback
+          e.target.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            e.target.style.transform = '';
+          }, 150);
+        }
+      });
+    });
+    </script>
+
+    <!-- hero section -->
+    <section id="home" class="hero-section" style="padding-top: 140px;">
+      <!-- Video Background - Photo Slideshow -->
+      <div class="video-background">
+        <div class="photo-slideshow" id="heroSlideshow">
+          <img src="img/rotary work.png" alt="ICT Training Session" class="slide active" loading="lazy" />
+          <img src="img/Empowering Youth.jpg" alt="Youth Empowerment Program" class="slide" loading="lazy" />
+          <img src="img/speaking at 20th intake.jpg" alt="Education Support Initiative" class="slide" loading="lazy" />
+          <img src="img/MTAC FC.jpg" alt="Skills Development Workshop" class="slide" loading="lazy" />
+          <img src="img/Community-Health-outreach-in-Mityana-1.jpg" alt="Community Health Outreach" class="slide" loading="lazy" />
+          <img src="img/recieving a medal MTAC.jpg" alt="Healthcare Services" class="slide" loading="lazy" />
+          <img src="img/children3.jpg" alt="Children Education Program" class="slide" loading="lazy" />
+          <img src="img/Donating to police.png" alt="Community Leadership" class="slide" loading="lazy" />
+        </div>
+        <div class="video-overlay"></div>
+      </div>
+      
+      <!-- Hero Content -->
+      <div class="container hero-content">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6">
+            <div class="hero-text" data-aos="fade-right">
+              <h1 class="display-3 fw-bold text-white mb-4">Chongi Empowerment Program</h1>
+              <h2 class="hero-tagline">Building Skills. Creating Opportunities. Transforming Communities.</h2>
+              <p class="lead text-white mb-4">
+                Empowering youth and communities in Uganda through ICT training, education support, and livelihood development programs.
+              </p>
+              <div class="hero-buttons">
+                <a href="#donate" class="btn btn-success btn-lg me-3">
+                  <i class="fas fa-heart me-2"></i>Donate Now
+                </a>
+                <a href="get-involved.html" class="btn btn-light btn-lg">
+                  <i class="fas fa-hands-helping me-2"></i>Get Involved
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-stats" data-aos="fade-left">
+              <div class="row">
+                <div class="col-6">
+                  <div class="stat-card">
+                    <h3 class="text-white">500+</h3>
+                    <p class="text-white">Youth Trained</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-card">
+                    <h3 class="text-white">50+</h3>
+                    <p class="text-white">Volunteers</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- newsletter signup -->
+    <section class="py-5 bg-success text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-8 offset-lg-2">
+            <h3 class="mb-4">Stay Connected with Chongi Empowerment Program</h3>
+            <p class="lead mb-4">Get the latest updates on our youth empowerment programs, ICT training, and community impact stories delivered to your inbox.</p>
+            <form class="newsletter-form" name="newsletter" method="POST" netlify action="/thank-you.html">
+              <input type="hidden" name="form-name" value="newsletter">
+              <div class="row justify-content-center">
+                <div class="col-md-6 mb-3">
+                  <input type="email" class="form-control form-control-lg" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <button type="submit" class="btn btn-light btn-lg w-100">
+                    <i class="fas fa-envelope me-2"></i>Subscribe
+                  </button>
+                </div>
+              </div>
+              <p class="small mt-3">We respect your privacy. Unsubscribe at any time.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- welcome -->
+    <section class="container py-5" id="welcome"
+      data-aos="fade-up"
+      data-aos-offset="-100"
+      data-aos-delay="40"
+      data-aos-duration="600"
+      data-aos-easing="ease-in-out"
+    >
+      <div class="row text-center">
+        <div class="col-12">
+          <span class="section-badge">
+            <i class="fas fa-heart me-2"></i>Welcome
+          </span>
+          <h2 class="section-title">WELCOME TO <span class="text-success">CHONGI EMPOWERMENT PROGRAM</span></h2>
+        </div>
+        <div class="col-lg-8 offset-lg-2 my-4">
+          <p class="lead">
+            Located in the heart of Kampala, Uganda, we are dedicated to empowering youth and communities through ICT training, education support, and livelihood development programs. Building Skills. Creating Opportunities. Transforming Communities.
+          </p>
+          <div class="welcome-features mt-5">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-item">
+                  <i class="fas fa-graduation-cap fa-2x text-success mb-3"></i>
+                  <h5>Youth Empowerment</h5>
+                  <p>Empowering young people with skills and opportunities for sustainable development</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="feature-item">
+                  <i class="fas fa-laptop fa-2x text-primary mb-3"></i>
+                  <h5>ICT Training</h5>
+                  <p>Providing digital literacy and technology skills for the modern economy</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="feature-item">
+                  <i class="fas fa-handshake fa-2x text-info mb-3"></i>
+                  <h5>Community Development</h5>
+                  <p>Creating sustainable change through collaborative community programs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <span class="section-badge">
+              <i class="fas fa-bullseye me-2"></i>Our Purpose
+            </span>
+            <h2 class="section-title">MISSION & <span class="text-success">VISION</span></h2>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="mission-vision-card h-100">
+              <div class="card-body p-4">
+                <div class="text-center mb-4">
+                  <div class="mission-vision-icon">
+                    <i class="fas fa-eye fa-3x text-primary"></i>
+                  </div>
+                  <h3 class="card-title text-primary fw-bold">Our Vision</h3>
+                </div>
+                <p class="card-text lead">
+                  A self-reliant and empowered society where individuals and communities have equal access to skills, opportunities, and sustainable development.
+                </p>
+                <div class="vision-highlights mt-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <span>Equal access to opportunities</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <span>Self-reliant communities</span>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <span>Sustainable development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="mission-vision-card h-100">
+              <div class="card-body p-4">
+                <div class="text-center mb-4">
+                  <div class="mission-vision-icon">
+                    <i class="fas fa-bullseye fa-3x text-success"></i>
+                  </div>
+                  <h3 class="card-title text-success fw-bold">Our Mission</h3>
+                </div>
+                <p class="card-text lead">
+                  To empower youth and communities through ICT training, education support, and livelihood development programs that build skills, create opportunities, and transform communities.
+                </p>
+                <div class="mission-highlights mt-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-graduation-cap text-primary me-2"></i>
+                    <span>ICT Training Programs</span>
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fas fa-book text-info me-2"></i>
+                    <span>Education Support</span>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="fas fa-handshake text-warning me-2"></i>
+                    <span>Livelihood Development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- programs -->
+    <section id="services" class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <span class="section-badge">
+              <i class="fas fa-graduation-cap me-2"></i>Our Programs
+            </span>
+            <h2 class="section-title">What We <span class="text-success">Offer</span></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            data-aos-duration="600"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+              <div class="service-image">
+                <img src="img/Empowering Youth.jpg" alt="Ugandan ICT Training" loading="lazy" />
+              </div>
+              <div class="service-content">
+                <h4>ICT Training</h4>
+                <p class="service-subtitle">Digital Skills for Tomorrow</p>
+                <p>Providing comprehensive ICT training programs including computer literacy, coding, and digital skills to prepare youth for the modern economy.</p>
+                <a href="programs.html" class="service-link">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            data-aos-duration="600"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div class="service-image">
+                <img src="img/Teaching the youth.jpg" alt="Ugandan Youth Empowerment" loading="lazy" />
+              </div>
+              <div class="service-content">
+                <h4>Youth Empowerment</h4>
+                <p class="service-subtitle">Building Future Leaders</p>
+                <p>Empowering young people through leadership development, mentorship programs, and skills training to create self-reliant youth.</p>
+                <a href="programs.html" class="service-link">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+            data-aos-duration="600"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-book"></i>
+              </div>
+              <div class="service-image">
+                <img src="img/Donating to Police.jpg" alt="Ugandan Education Support" loading="lazy" />
+              </div>
+              <div class="service-content">
+                <h4>Education Support</h4>
+                <p class="service-subtitle">Learning for Every Child</p>
+                <p>Providing educational materials, tutoring services, and school fees support to ensure every child has access to quality education.</p>
+                <a href="programs.html" class="service-link">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            data-aos-duration="600"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="service-image">
+                <img src="img/rotary work.png" alt="Ugandan Livelihood Development" loading="lazy" />
+              </div>
+              <div class="service-content">
+                <h4>Livelihood Development</h4>
+                <p class="service-subtitle">Economic Independence</p>
+                <p>Creating sustainable livelihood opportunities through vocational training, entrepreneurship support, and job placement services.</p>
+                <a href="programs.html" class="service-link">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <span class="section-badge">
+              <i class="fas fa-heart me-2"></i>About Us
+            </span>
+            <h2 class="section-title">Our Mission & Vision</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="about-card">
+              <div class="about-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h4>Our Mission</h4>
+              <p>To empower Ugandan youth and communities through leadership development, digital literacy, civic education, and community service promoting peace, independence, and self-reliance across the nation.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="about-card">
+              <div class="about-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h4>Our Vision</h4>
+              <p>A sovereign and self-reliant Uganda where every citizen is empowered to lead, serve, and shape their future with dignity and purpose.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="about-card">
+              <div class="about-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <h4>Our Values</h4>
+              <p>Compassion, integrity, collaboration, and sustainability guide everything we do as we work to transform lives and strengthen communities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- impact section -->
+    <section class="py-5 bg-primary text-white" id="impact">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12 mb-5">
+            <span class="section-badge bg-white text-primary">
+              <i class="fas fa-chart-bar me-2"></i>Our Impact
+            </span>
+            <h2 class="section-title text-white">Making a Difference in 2025</h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="impact-stat">
+              <div class="stat-number" data-target="500">0</div>
+              <p>Children Educated</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="impact-stat">
+              <div class="stat-number" data-target="1200">0</div>
+              <p>Families Fed</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="impact-stat">
+              <div class="stat-number" data-target="85">0</div>
+              <p>Homes Provided</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="impact-stat">
+              <div class="stat-number" data-target="150">0</div>
+              <p>Medical Treatments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- events -->
+    <section id="events" class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center mb-5">
+            <span class="section-badge">
+              <i class="fas fa-calendar me-2"></i>Events
+            </span>
+            <h2 class="section-title">Upcoming Events</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="100"
+            data-aos-duration="800"
+          >
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">15</span>
+                <span class="month">MAY</span>
+              </div>
+              <img src="img/children3.jpg" class="event-image" alt="Education Event" loading="lazy" />
+              <div class="event-content">
+                <h5>Free Tutoring Program Launch</h5>
+                <p class="event-location">
+                  <i class="fas fa-map-marker-alt me-2"></i>Nansana Community Center
+                </p>
+                <p>Join us as we launch our new after-school tutoring program for children in Primary 1-7.</p>
+                <a href="#contact" class="btn btn-primary btn-sm">Register Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="800"
+          >
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">10</span>
+                <span class="month">JUL</span>
+              </div>
+              <img src="img/Community-Health-outreach-in-Mityana-1.jpg" class="event-image" alt="Health Event" loading="lazy" />
+              <div class="event-content">
+                <h5>Community Health Fair</h5>
+                <p class="event-location">
+                  <i class="fas fa-map-marker-alt me-2"></i>Nansana Health Center
+                </p>
+                <p>Free health screenings, vaccinations, and health education for all community members.</p>
+                <a href="#contact" class="btn btn-primary btn-sm">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4"
+            data-aos="flip-right"
+            data-aos-delay="300"
+            data-aos-duration="800"
+          >
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">05</span>
+                <span class="month">JUL</span>
+              </div>
+              <img src="img/Computer Repair.png" class="event-image" alt="Community Event" loading="lazy" />
+              <div class="event-content">
+                <h5>Skills Training Workshop</h5>
+                <p class="event-location">
+                  <i class="fas fa-map-marker-alt me-2"></i>CHONGI Global.
+                </p>
+                <p>Learn valuable vocational skills including tailoring, carpentry, and small business management.</p>
+                <a href="#contact" class="btn btn-primary btn-sm">Apply Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- blog section -->
+    <section id="blog" class="py-5 bg-light">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <span class="section-badge">
+              <i class="fas fa-newspaper me-2"></i>Latest News
+            </span>
+            <h2 class="section-title">Stories & Updates</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="100"
+            data-aos-duration="800"
+          >
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">10</span>
+                <span class="month">MAY</span>
+              </div>
+              <img src="img/primary kids.webp" class="event-image" alt="Education Success Story" loading="lazy" />
+              <div class="event-content">
+                <h5>100 Children Graduate from Our Tutoring Program</h5>
+                <p class="event-location">
+                  <i class="fas fa-map-marker-alt me-2"></i>Nansana Community Center
+                </p>
+                <p>Celebrating a major milestone as 100 children successfully complete our after-school tutoring program in Nansana.</p>
+                <a href="#" class="btn btn-primary btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="200"
+            data-aos-duration="800"
+          >
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">05</span>
+                <span class="month">MAY</span>
+              </div>
+              <img src="img/Nurse and patient.jpg" class="event-image" alt="Health Campaign" loading="lazy" />
+              <div class="event-content">
+                <h5>Health Fair Serves 500+ Community Members</h5>
+                <p class="event-location">
+                  <i class="fas fa-map-marker-alt me-2"></i>Mityana Health Center
+                </p>
+                <p>Our recent community health fair provided free medical checkups and health education to over 500 residents.</p>
+                <a href="#" class="btn btn-primary btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="300"
+            data-aos-duration="800"
+          >
+            <div class="event-card">
+              <div class="event-date">
+                <span class="day">28</span>
+                <span class="month">APR</span>
+              </div>
+              <img src="img/ground breaking.png" class="event-image" alt="Community Project" loading="lazy" />
+              <div class="event-content">
+                <h5>New Community Center Groundbreaking</h5>
+                <p class="event-location">
+                  <i class="fas fa-map-marker-alt me-2"></i>Kampala District
+                </p>
+                <p>Breaking ground on our new community center that will serve thousands of youth and families in the area.</p>
+                <a href="#" class="btn btn-primary btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-primary btn-lg">View All Stories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- donate section -->
+    <section id="donate" class="py-5 bg-light">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <span class="section-badge">
+              <i class="fas fa-heart me-2"></i>Support Our Mission
+            </span>
+            <h2 class="section-title">Make a Difference Today</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="donate-content">
+              <h4>Your Donation Changes Lives</h4>
+              <p>Every contribution helps us provide education, healthcare, and shelter to those who need it most in Uganda. Your support creates lasting change in our communities.</p>
+              <div class="donation-impact">
+                <div class="impact-item">
+                  <i class="fas fa-book text-primary"></i>
+                  <span>$25 provides school supplies for one child</span>
+                </div>
+                <div class="impact-item">
+                  <i class="fas fa-medkit text-primary"></i>
+                  <span>$50 funds basic medical care for a family</span>
+                </div>
+                <div class="impact-item">
+                  <i class="fas fa-home text-primary"></i>
+                  <span>$100 helps shelter a family for a month</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="donation-options">
+              <h4>Choose Your Impact</h4>
+              <div class="donation-amounts">
+                <button class="btn btn-outline-primary donation-btn" data-amount="25">$25</button>
+                <button class="btn btn-outline-primary donation-btn" data-amount="50">$50</button>
+                <button class="btn btn-outline-primary donation-btn" data-amount="100">$100</button>
+                <button class="btn btn-outline-primary donation-btn" data-amount="250">$250</button>
+                <button class="btn btn-outline-primary donation-btn" data-amount="custom">Custom</button>
+              </div>
+              <div class="custom-amount mt-3" style="display: none;">
+                <input type="number" class="form-control" id="customAmount" placeholder="Enter custom amount">
+              </div>
+              <div class="donation-methods mt-4">
+                <h5>Payment Methods</h5>
+                <div class="payment-options">
+                  <a href="tel:+256705499999" class="btn btn-success btn-lg mb-2">
+                    <i class="fas fa-phone me-2"></i>Mobile Money
+                  </a>
+                  <a href="mailto:masigae2000@gmail.com" class="btn btn-primary btn-lg mb-2">
+                    <i class="fas fa-credit-card me-2"></i>Bank Transfer
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- volunteer section -->
+    <section id="volunteer" class="py-5 volunteer-section">
+      <div class="volunteer-overlay"></div>
+      <img src="img/rotary work.png" alt="Volunteers" class="volunteer-bg" loading="lazy" />
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-8 offset-lg-2">
+            <span class="section-badge bg-white text-primary">
+              <i class="fas fa-hands-helping me-2"></i>Get Involved
+            </span>
+            <h2 class="section-title text-white mb-4">
+              Help Us Change Lives in Uganda, and Beyond
+            </h2>
+            <p class="lead text-white mb-4">
+              Your time, skills, and passion can make a real difference in our community. Join our team of dedicated volunteers and be part of the change you want to see.
+            </p>
+            <div class="volunteer-actions">
+              <a href="volunteer.html" class="btn btn-primary btn-lg me-3 mb-3">
+                <i class="fas fa-user-plus me-2"></i>Apply to Volunteer
+              </a>
+              <a href="tel:+256705499999" class="btn btn-primary btn-lg me-3 mb-3">
+                <i class="fas fa-phone me-2"></i>Call to Volunteer
+              </a>
+              <a href="mailto:masigae2000@gmail.com" class="btn btn-outline-light btn-lg mb-3">
+                <i class="fas fa-envelope me-2"></i>Email Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center mb-5">
+            <span class="section-badge">
+              <i class="fas fa-envelope me-2"></i>Contact
+            </span>
+            <h2 class="section-title">Get in Touch</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="contact-info">
+              <h4 class="mb-4">Contact Information</h4>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h6>Location</h6>
+                  <p>Nansana, Kampala<br>Uganda</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h6>Phone</h6>
+                  <p><a href="tel:+256705499999">+256705499999</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h6>Email</h6>
+                  <p><a href="mailto:masigae2000@gmail.com">masigae2000@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h6>Office Hours</h6>
+                  <p>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-form">
+              <h4 class="mb-4">Send us a Message</h4>
+                <form name="contact" method="POST" netlify data-netlify-recaptcha="true" action="/thank-you.html">
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="d-none">
+    <label>Don't fill this out if you're human: <input name="bot-field"/></label>
+  </p>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+  </div>
+
+  <div class="mb-3">
+    <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+  </div>
+
+  <div data-netlify-recaptcha="true" class="mb-3"></div>
+
+  <button type="submit" class="btn btn-primary btn-lg">
+    <i class="fas fa-paper-plane me-2"></i>Send Message
+  </button>
+</form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+      <!-- Footer Top Section -->
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <!-- About Section -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="footer-about">
+                <div class="footer-logo-text">
+                  <h3 class="footer-title">Chongi Empowerment Program</h3>
+                  <p class="footer-tagline">Building Skills. Creating Opportunities. Transforming Communities.</p>
+                </div>
+                <p class="footer-description">
+                  Empowering youth and communities in Uganda through ICT training, education support, and livelihood development programs. Together, we're creating sustainable change and brighter futures.
+                </p>
+                <div class="footer-social">
+                  <h6 class="social-title">Connect With Us</h6>
+                  <div class="social-links-modern">
+                    <a href="https://www.youtube.com/@sovereignarms8357" class="social-link-modern" title="YouTube">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://x.com/BaboonMaddox/status/1936350715477413950" class="social-link-modern" title="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/?hl=en" class="social-link-modern" title="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/masiga-e-okuku-377a55297/?originalSubdomain=ug" class="social-link-modern" title="LinkedIn">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.facebook.com" class="social-link-modern" title="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6 mb-4">
+              <div class="footer-links-section">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="footer-links-modern">
+                  <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                  <li><a href="programs.html"><i class="fas fa-chevron-right me-2"></i>Programs</a></li>
+                  <li><a href="projects.html"><i class="fas fa-chevron-right me-2"></i>Projects</a></li>
+                  <li><a href="gallery.html"><i class="fas fa-chevron-right me-2"></i>Gallery</a></li>
+                  <li><a href="get-involved.html"><i class="fas fa-chevron-right me-2"></i>Get Involved</a></li>
+                  <li><a href="#donate"><i class="fas fa-chevron-right me-2"></i>Donate</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Programs -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="footer-programs">
+                <h5 class="footer-heading">Our Programs</h5>
+                <ul class="footer-links-modern">
+                  <li><a href="programs.html#ict"><i class="fas fa-laptop me-2"></i>ICT Training</a></li>
+                  <li><a href="programs.html#youth"><i class="fas fa-users me-2"></i>Youth Empowerment</a></li>
+                  <li><a href="programs.html#education"><i class="fas fa-book me-2"></i>Education Support</a></li>
+                  <li><a href="programs.html#livelihood"><i class="fas fa-briefcase me-2"></i>Livelihood Development</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Contact -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="footer-contact">
+                <h5 class="footer-heading">Get In Touch</h5>
+                <div class="contact-info-modern">
+                  <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-details">
+                      <h6>Location</h6>
+                      <p>Kampala, Uganda</p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-details">
+                      <h6>Phone</h6>
+                      <p><a href="tel:+256705499999">+256 705 499 999</a></p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-details">
+                      <h6>Email</h6>
+                      <p><a href="mailto:masigae2000@gmail.com">masigae2000@gmail.com</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-cta">
+                  <a href="get-involved.html" class="btn btn-light btn-modern">
+                    <i class="fas fa-heart me-2"></i>Support Our Mission
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright">
+                <p>&copy; 2026 CEP foundation LTD. All rights reserved.</p>
+                <p class="footer-tag">Empowering Communities, Transforming Lives</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-bottom-links">
+                <a href="#" class="bottom-link">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="#" class="bottom-link">Terms of Service</a>
+                <span class="separator">|</span>
+                <a href="#" class="bottom-link">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

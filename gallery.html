@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="theme-color" content="#16a34a">
+    <meta name="supported-color-schemes" content="light">
+    <title>Gallery - Chongi Empowerment Program (CEP)</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Additional CSS for Gallery Page -->
+    <style>
+        .gallery-hero {
+            background: linear-gradient(135deg, #0891b2 0%, #16a34a 100%);
+            color: white;
+            padding: 140px 0 80px 0;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        .gallery-category {
+            background: linear-gradient(135deg, #16a34a, #2563eb);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .filter-btn {
+            background: #f8f9fa;
+            border: 2px solid transparent;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #16a34a, #2563eb);
+            color: white;
+            border-color: #16a34a;
+        }
+        .modal img {
+            max-width: 100%;
+            height: auto;
+        }
+        .featured-gallery {
+            margin-bottom: 4rem;
+        }
+        .featured-item {
+            position: relative;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <!-- Redesigned Header -->
+    <header class="main-header">
+      <div class="header-top">
+        <div class="container-fluid px-md-5">
+          <div class="header-content">
+            <!-- Logo -->
+            <div class="header-logo">
+              <a href="index.html" class="navbar-brand">
+                <img src="img/CHONGI_GLOBAL_LOGO.png" alt="Chongi Empowerment Program (CEP)" height="80px" style="border-radius: 12px;">
+              </a>
+            </div>
+
+            <!-- Centered Search Bar -->
+            <div class="header-search">
+              <form class="search-form" onsubmit="siteSearch(event)">
+                <div class="search-input-group">
+                  <input type="search" id="searchInput" class="search-input" placeholder="Search our website..." aria-label="Search">
+                  <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="header-actions">
+              <a href="tel:+256705499999" class="header-action-btn">
+                <i class="fas fa-phone"></i>
+                <span>0705499999</span>
+              </a>
+              <a href="#donate" class="header-action-btn donate-btn">
+                <i class="fas fa-heart"></i>
+                <span>Donate</span>
+              </a>
+              <button class="header-action-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="main-nav">
+        <div class="container-fluid px-md-5">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#about" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="programs.html" class="nav-link">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link active">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a href="get-involved.html" class="nav-link">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#donate" class="nav-link">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img src="img/CHONGI_GLOBAL_LOGO.png" alt="Chongi Empowerment Program (CEP)" height="60px" style="border-radius: 10px;">
+          <h4>Chongi Empowerment Program</h4>
+        </div>
+        <button class="sidebar-close" id="sidebarClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="sidebar-content">
+        <ul class="sidebar-nav">
+          <li class="sidebar-nav-item">
+            <a href="index.html" class="sidebar-nav-link">
+              <i class="fas fa-home me-3"></i>Home
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#about" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>About Us
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="programs.html" class="sidebar-nav-link">
+              <i class="fas fa-graduation-cap me-3"></i>Programs
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="projects.html" class="sidebar-nav-link">
+              <i class="fas fa-project-diagram me-3"></i>Projects
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="gallery.html" class="sidebar-nav-link active">
+              <i class="fas fa-images me-3"></i>Gallery
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="get-involved.html" class="sidebar-nav-link">
+              <i class="fas fa-hands-helping me-3"></i>Get Involved
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#donate" class="sidebar-nav-link">
+              <i class="fas fa-heart me-3"></i>Donate
+            </a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a href="index.html#contact" class="sidebar-nav-link">
+              <i class="fas fa-envelope me-3"></i>Contact
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-contact">
+          <h5>Get in Touch</h5>
+          <div class="contact-info">
+            <p><i class="fas fa-phone me-2"></i><a href="tel:+256705499999">+256705499999</a></p>
+            <p><i class="fas fa-envelope me-2"></i><a href="mailto:masigae2000@gmail.com">masigae2000@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt me-2"></i>Kampala, Uganda</p>
+          </div>
+        </div>
+
+        <div class="sidebar-social">
+          <h5>Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.youtube.com/@sovereignarms8357" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://x.com/BaboonMaddox/status/1936350715477413950" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/?hl=en" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/masiga-e-okuku-377a55297/?originalSubdomain=ug" class="social-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Floating Menu Button -->
+    <button class="floating-menu-btn" id="floatingMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Gallery Hero -->
+    <section class="gallery-hero">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Gallery</h1>
+            <p class="lead mb-4">Building Skills. Creating Opportunities. Transforming Communities.</p>
+            <p class="lead">Visual stories of our impact and community transformation</p>
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="py-5">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="training">ICT Training</button>
+                <button class="filter-btn" data-filter="youth">Youth Empowerment</button>
+                <button class="filter-btn" data-filter="education">Education Support</button>
+                <button class="filter-btn" data-filter="events">Community Events</button>
+                <button class="filter-btn" data-filter="impact">Impact Stories</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Gallery -->
+    <section class="featured-gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center mb-5">Featured <span class="text-success">Moments</span></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="featured-item" data-aos="fade-right">
+                        <img src="img/HAki training.jpg" alt="Ugandan ICT Training Session" loading="lazy">
+                        <div class="featured-overlay">
+                            <span class="gallery-category">ICT Training</span>
+                            <h3>Digital Literacy Workshop</h3>
+                            <p>Ugandan youth learning essential computer skills for the digital economy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="featured-item" data-aos="fade-left">
+                        <img src="img/Empowering Youth.jpg" alt="Ugandan Youth Leadership Training" loading="lazy">
+                        <div class="featured-overlay">
+                            <span class="gallery-category">Youth Empowerment</span>
+                            <h3>Leadership Development Program</h3>
+                            <p>Building tomorrow's Ugandan community leaders through intensive training</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center mb-5">Our <span class="text-primary">Gallery</span></h2>
+                </div>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="training" data-aos="fade-up">
+                    <img src="img/HAki training.jpg" alt="Ugandan ICT Training" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">ICT Training</span>
+                        <h4>Computer Skills Workshop</h4>
+                        <p>Ugandan students learning fundamental computer operations</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="youth" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/Empowering Youth.jpg" alt="Ugandan Youth Empowerment" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Youth Empowerment</span>
+                        <h4>Team Building Activities</h4>
+                        <p>Ugandan youth participating in collaborative exercises</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="education" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/Free education.jpg" alt="Ugandan Education Support" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Education Support</span>
+                        <h4>Tutoring Session</h4>
+                        <p>Volunteers helping Ugandan students with their studies</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/Community-Health-outreach-in-Mityana-1.jpg" alt="Ugandan Community Event" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Community Events</span>
+                        <h4>Community Outreach</h4>
+                        <p>Engaging with local Ugandan community members</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="training" data-aos="fade-up" data-aos-delay="400">
+                    <img src="img/Teaching youth.jpg" alt="Advanced ICT Training" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">ICT Training</span>
+                        <h4>Web Development Class</h4>
+                        <p>Ugandan students learning coding and web development</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="impact" data-aos="fade-up" data-aos-delay="500">
+                    <img src="img/recieving a medal MTAC.jpg" alt="Ugandan Success Story" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Impact Stories</span>
+                        <h4>Graduation Ceremony</h4>
+                        <p>Celebrating Ugandan student achievements and success</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item" data-category="youth" data-aos="fade-up" data-aos-delay="600">
+                    <img src="img/children3.jpg" alt="Ugandan Mentorship Program" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Youth Empowerment</span>
+                        <h4>Mentorship Session</h4>
+                        <p>One-on-one guidance with experienced Ugandan mentors</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item" data-category="education" data-aos="fade-up" data-aos-delay="700">
+                    <img src="img/Empowering youth 2.jpg" alt="Ugandan Study Group" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Education Support</span>
+                        <h4>Group Study Session</h4>
+                        <p>Ugandan collaborative learning environment</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="800">
+                    <img src="img/ground breaking.png" alt="Ugandan Community Workshop" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Community Events</span>
+                        <h4>Skills Workshop</h4>
+                        <p>Ugandan community members learning new skills</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Gallery Image</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="Gallery Image">
+                    <p id="modalCaption" class="mt-3"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Be Part of Our Story</h2>
+            <p class="lead mb-4">Join us in creating more memorable moments of impact</p>
+            <div class="cta-buttons">
+                <a href="get-involved.html" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-hands-helping me-2"></i>Get Involved
+                </a>
+                <a href="index.html#donate" class="btn btn-success btn-lg">
+                    <i class="fas fa-heart me-2"></i>Support Our Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2026 CEP foundation LTD. All rights reserved.</p>
+            <p class="small">Building Skills. Creating Opportunities. Transforming Communities.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    
+    <!-- Gallery JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize sidebar for gallery page
+        const menuToggle = document.getElementById('menuToggle');
+        const floatingMenuBtn = document.getElementById('floatingMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarClose = document.getElementById('sidebarClose');
+
+        // Open sidebar from main menu toggle
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Open sidebar from floating menu button
+        if (floatingMenuBtn) {
+            floatingMenuBtn.addEventListener('click', function() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        // Close sidebar
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Close sidebar when clicking close button
+        sidebarClose.addEventListener('click', closeSidebar);
+
+        // Close sidebar on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+
+        // Gallery Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Gallery Modal Functionality
+        const galleryModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalCaption = document.getElementById('modalCaption');
+
+        // Add click event to all gallery items
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const overlay = this.querySelector('.gallery-overlay');
+                const title = overlay.querySelector('h4').textContent;
+                const caption = overlay.querySelector('p').textContent;
+
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                modalTitle.textContent = title;
+                modalCaption.textContent = caption;
+
+                galleryModal.show();
+            });
+        });
+    });
+    </script>
+</body>
+</html>
